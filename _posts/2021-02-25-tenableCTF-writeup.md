@@ -4,16 +4,18 @@ title: Tenable CTF Writeup
 tags: [ctf, writeup, stego, misc]
 ---
 
+Tenable's first CTF took place past weekend. I really enjoyed the challenges! In the following, you can find some writeups for the Stego and Misc category.
+
 # Stego
 
 ## Easy Stego - 25 points
 ##### Message
 Can you find the flag?
 ##### Content
-![blm](/assets/img/01_TenableCTF/blm.png)
+![blm](/assets/img/01_TenableCTF/blm1.png)
 ##### Solution
 The image consisted of three seperate images, each in a different colour. I decided to use the tool stegsolve for getting a better look at it. A download can be found here: https://github.com/eugenekolo/sec-tools/tree/master/stego/stegsolve/stegsolve. By executing the command ``` java -jar stegsolve.jar  ```, stegsolve is started. Now, the image can be opened and viewed in different filters. 
-![blm](/assets/img/01_TenableCTF/blm.png)
+![blm](/assets/img/01_TenableCTF/blm_combined.png)
 On the images, we can now see the flag:
 ``` flag{Bl4ck_liv3S_MATTER} ```
 
@@ -25,16 +27,16 @@ We discovered Arasaka operatives sending wierd pictures to each other. It looks 
 ##### Solution
 The two files look like they have both been encrypted with the same XOR key. Here's a nice explanation for what XOR is and what properties it has: https://accu.org/journals/overload/20/109/lewin_1915/. 
 While XOR encrypting one image with a key is quite secure, repeating the same key twice makes it possible to find out the contents of the original, unencrypted images. By assuming that both files have been encrypted with the same key, we can figure the following equations.
-```
+```sh
 img1 ^ key = enc_img1
 img2 ^ key = enc_img2
 ```
 As we have crypted1.png and crypted2.png given, we can make a new equation and solve it for the original images:
-```
+```sh
 enc_img1 ^ enc_img2 = img1 ^ key ^ img2 ^ key
 ```
 As XORing something with itself always returns zero, the two occurences of the key cancel each other out.
-```
+```sh
 enc_img1 ^ enc_img2 = img1 ^ img2
 ```
 This means that by XORing the two images given with each other, we'll end up with an image of the unencrypted images XORed with each other. In practice, this can be done with the following command: (1)

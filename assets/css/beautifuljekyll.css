@@ -861,7 +861,7 @@ pre {
 }
 .highlight pre {
   border: none;
-  background: none;
+  background: #c7c1c3;
   margin: 0;
 }
 .highlight > pre {

@@ -2,7 +2,7 @@
 layout: post
 title: Crafting a Travellers Journal out of Old Boots
 tags: [crafting, bookbinding]
-thumbnail: "/assets/img/03_Boot/1.jpg"
+thumbnail-img: /assets/img/03_Boot/1.jpg
 ---
 
 # Crafting a Travellers Journal out of Old Boots

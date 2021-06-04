@@ -2,6 +2,7 @@
 layout: post
 title: Crafting a Travellers Journal out of Old Boots
 tags: [crafting, bookbinding]
+cover-img: /assets/img/03_Boot/1.jpg
 thumbnail-img: /assets/img/03_Boot/1.jpg
 ---
 
@@ -40,4 +41,3 @@ I could imagine using a sketchbook like this for taking notes in a Dungeons and 
 ![result1](/assets/img/03_Boot/1.jpg)
 ![result2](/assets/img/03_Boot/2.jpg)
 ![result3](/assets/img/03_Boot/3.jpg)
-![result4](/assets/img/03_Boot/4.jpg)
